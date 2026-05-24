@@ -317,11 +317,19 @@ dependencies = [
     { name = "platformio" },
 ]
 
+[package.dev-dependencies]
+dev = [
+    { name = "esptool" },
+]
+
 [package.metadata]
 requires-dist = [
     { name = "esptool", specifier = "==4.5.1" },
     { name = "platformio", specifier = "==6.1.19" },
 ]
+
+[package.metadata.requires-dev]
+dev = [{ name = "esptool", specifier = ">=4.5.1" }]
 
 [[package]]
 name = "reedsolo"
