@@ -104,6 +104,10 @@ void clipLabel(lv_obj_t* lbl, int width) {
     lv_label_set_long_mode(lbl, LV_LABEL_LONG_CLIP);
 }
 
+bool isCompactHashRow(const SettingItem& item) {
+    return strcmp(item.label, "LXMF Address") == 0;
+}
+
 bool extractReleaseTag(const String& payload, char* out, size_t outLen) {
     if (!out || outLen == 0) return false;
     out[0] = '\0';
@@ -1341,6 +1345,7 @@ void LvSettingsScreen::rebuildItemList() {
         bool rebootPending = settingNeedsReboot(item);
         bool armed = armedAction(item);
         bool destructive = destructiveAction(item);
+        bool compactHashRow = isCompactHashRow(item);
         uint32_t armedColor = destructive ? Theme::ERROR_CLR : Theme::WARNING_CLR;
 
         lv_obj_t* row = lv_obj_create(_scrollContainer);
@@ -1388,7 +1393,7 @@ void LvSettingsScreen::rebuildItemList() {
             item.type == SettingType::ACTION ? Theme::TEXT_PRIMARY :
             item.type == SettingType::READONLY ? Theme::TEXT_MUTED : Theme::TEXT_SECONDARY;
         lv_obj_set_style_text_color(nameLbl, lv_color_hex(nameColor), 0);
-        clipLabel(nameLbl, Theme::CONTENT_W - 136);
+        clipLabel(nameLbl, compactHashRow ? 84 : Theme::CONTENT_W - 136);
         lv_label_set_text(nameLbl, item.label);
         lv_obj_align(nameLbl, LV_ALIGN_LEFT_MID, 8, 0);
 
@@ -1450,10 +1455,10 @@ void LvSettingsScreen::rebuildItemList() {
 
         if (!valStr.isEmpty()) {
             lv_obj_t* valLbl = lv_label_create(row);
-            lv_obj_set_style_text_font(valLbl, font, 0);
+            lv_obj_set_style_text_font(valLbl, compactHashRow ? &lv_font_ratdeck_10 : font, 0);
             lv_obj_set_style_text_color(valLbl, lv_color_hex(valColor), 0);
             lv_obj_set_style_text_align(valLbl, LV_TEXT_ALIGN_RIGHT, 0);
-            clipLabel(valLbl, 124);
+            clipLabel(valLbl, compactHashRow ? 220 : 124);
             lv_label_set_text(valLbl, valStr.c_str());
             lv_obj_align(valLbl, LV_ALIGN_RIGHT_MID, -8, 0);
             // Cache value label for the actively edited item (in-place updates)
