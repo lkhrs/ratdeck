@@ -43,9 +43,9 @@ extern const lv_font_t lv_font_ratdeck_14;
 
 // Fonts - built-in (only 16 still used for titles; 10/12/14 replaced by custom ratdeck fonts)
 #define LV_FONT_MONTSERRAT_10 0
-#define LV_FONT_MONTSERRAT_12 1  // Delivery-status check glyphs in LvMessageView
+#define LV_FONT_MONTSERRAT_12 0  // Delivery-status check glyphs in LvMessageView
 #define LV_FONT_MONTSERRAT_14 0
-#define LV_FONT_MONTSERRAT_16 1
+#define LV_FONT_MONTSERRAT_16 0
 #define LV_FONT_UNSCII_8      0
 #define LV_FONT_DEFAULT        &lv_font_ratdeck_14
 

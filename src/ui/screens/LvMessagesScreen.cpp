@@ -115,7 +115,7 @@ void LvMessagesScreen::createUI(lv_obj_t* parent) {
     lv_obj_center(_lblEmpty);
 
     lv_obj_t* emptyIcon = lv_label_create(_lblEmpty);
-    lv_obj_set_style_text_font(emptyIcon, &lv_font_montserrat_12, 0);
+    lv_obj_set_style_text_font(emptyIcon, &lv_font_ratdeck_12, 0);
     lv_obj_set_style_text_color(emptyIcon, lv_color_hex(Theme::PRIMARY), 0);
     lv_label_set_text(emptyIcon, LV_SYMBOL_ENVELOPE);
     lv_obj_align(emptyIcon, LV_ALIGN_TOP_MID, 0, 15);

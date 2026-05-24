@@ -66,7 +66,7 @@ void LvDataCleanScreen::createUI(lv_obj_t* parent) {
                                   LV_LABEL_LONG_DOT);
     lv_obj_align(eyebrow, LV_ALIGN_TOP_MID, 0, 10);
 
-    lv_obj_t* title = makeLabel(parent, "SD DATA FOUND", &lv_font_montserrat_16,
+    lv_obj_t* title = makeLabel(parent, "SD DATA FOUND", &lv_font_ratdeck_16,
                                 Theme::ACCENT, 260, LV_TEXT_ALIGN_CENTER,
                                 LV_LABEL_LONG_DOT);
     lv_obj_align(title, LV_ALIGN_TOP_MID, 0, 28);

@@ -513,7 +513,7 @@ void LvMessageView::rebuildMessages() {
         lv_obj_clear_flag(empty, LV_OBJ_FLAG_SCROLLABLE);
 
         lv_obj_t* icon = lv_label_create(empty);
-        lv_obj_set_style_text_font(icon, &lv_font_montserrat_12, 0);
+        lv_obj_set_style_text_font(icon, &lv_font_ratdeck_12, 0);
         lv_obj_set_style_text_color(icon, lv_color_hex(Theme::PRIMARY), 0);
         lv_label_set_text(icon, LV_SYMBOL_ENVELOPE);
         lv_obj_align(icon, LV_ALIGN_TOP_MID, 0, 13);

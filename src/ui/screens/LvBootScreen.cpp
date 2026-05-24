@@ -31,7 +31,7 @@ void LvBootScreen::createUI(lv_obj_t* parent) {
     lv_obj_set_style_bg_opa(parent, LV_OPA_COVER, 0);
     lv_obj_clear_flag(parent, LV_OBJ_FLAG_SCROLLABLE);
 
-    _lblTitle = makeLabel(parent, "RATSPEAK", &lv_font_montserrat_16,
+    _lblTitle = makeLabel(parent, "RATSPEAK", &lv_font_ratdeck_16,
                           Theme::ACCENT, 240, LV_TEXT_ALIGN_CENTER);
     lv_obj_align(_lblTitle, LV_ALIGN_CENTER, 0, -26);
 
