@@ -1,3 +1,7 @@
+# Fork of ratdeck firmware with Atkinson Hyperlegible as the default font
+
+Because Montserrat is unbearable.
+
 <div align="center">
 
 # [Ratdeck](https://ratspeak.org/)
@@ -24,14 +28,18 @@ End-to-end encrypted [LXMF](https://github.com/markqvist/LXMF) messaging over Lo
 
 The easiest way is the **[web flasher](https://ratspeak.org/download.html)** — enable download mode (hold the trackball while powering on), plug in the USB, click flash, done.
 
-To build from source:
+To build and install from source:
+
+List devices:
+```bash
+uv run platformio device list
+```
+
+The T-Deck is *usually* `/dev/cu.usbmodem2101` for me. Double-check!
 
 ```bash
-git clone https://github.com/ratspeak/ratdeck
-cd ratdeck
 uv sync
-uv run platformio run
-uv run platformio run --target upload
+uv run platformio run --target upload --upload-port /dev/cu.usbmodem2101
 ```
 
 ## Usage
