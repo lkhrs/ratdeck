@@ -29,8 +29,9 @@ To build from source:
 ```bash
 git clone https://github.com/ratspeak/ratdeck
 cd ratdeck
-pip install platformio
-python3 -m platformio run --target upload
+uv sync
+uv run platformio run
+uv run platformio run --target upload
 ```
 
 ## Usage
